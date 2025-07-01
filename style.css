@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+
 .service-request-wrapper .service-request-incident-description-view {
 	border: 1px solid rgba(0, 0, 0, .125);
 	border-radius: 4px;
@@ -25,4 +27,89 @@
     padding-bottom: 19px;
     height: 100%;
     height: 700px;
+}
+
+.atividadesContainer{
+	padding: 0px 0px 0px 0px;
+}
+#container-conhecimento.atividadesListContainer.active
+
+ {
+    opacity: 1;
+    display: flex
+;
+    z-index: 10;
+    border-top: 2px solid #911702;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 0px;
+    justify-content: space-between;
+    padding-top: 0px;
+    padding-left: 0px;
+    /* padding-right: 25px; */
+    padding-bottom: 19px;
+    height: 125%;
+ }
+ 
+.myCeHeader {
+    height: 80px;
+    align-self: stretch;
+    flex-grow: 0;
+     position: sticky !important;
+    display: flex
+;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px 0 16px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    z-index: 16;
+}
+.portalWrapper {
+    display: flex;
+    padding-top: 0px!important;
+    flex-direction: column;
+    background: #FAFAFA;
+}
+
+#grupo-flutuante {
+  width: 50px;
+  height: 50px;
+  border-radius: 100% !important;
+  background: #065e84 !important;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+#grupo-flutuante::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 96 960 960' width='24'%3E%3Cpath fill='white' d='M796 935 585 724q-36 30-82 47t-95 17q-117 0-198.5-81.5T128 508q0-117 81.5-198.5T408 228q117 0 198.5 81.5T688 508q0 49-17 95t-47 82l211 211-39 39ZM408 708q83 0 141.5-58.5T608 508q0-83-58.5-141.5T408 308q-83 0-141.5 58.5T208 508q0 83 58.5 141.5T408 708Z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#grupo-flutuante > label[for="seletor-grupo"] {
+	display: none;
+	
+}
+#seletor-grupo {
+  display: none;
+  
+}
+
+#grupo-flutuante:hover {
+   width: 350px;
+  height: 45px;
+  border-radius: 8px !important;
+  
+}
+
+#grupo-flutuante:hover #seletor-grupo {
+  display: inline-block;
 }
