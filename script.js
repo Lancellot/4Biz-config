@@ -49,8 +49,8 @@
     const container = document.createElement('div');
     container.id = 'grupo-flutuante';
     container.style.position = 'fixed';
-    container.style.top = '20px';
-    container.style.left = '20px';
+    container.style.bottom = '55px';
+    container.style.left = '25px';
     container.style.zIndex = '9999';
     container.style.background = 'white';
     container.style.border = '1px solid #ccc';
@@ -70,11 +70,14 @@
 
     const opcoes = [
       '-- Escolha o grupo --',
+      "Todos",
       'CADI - Atendimento ao Público Externo - N1',
       'CADI - Atendimento 1º Grau Interior - N1',
       'CADI - Atendimento 1º Grau Poa - N1',
+      "CADI - Atendimento 2º Grau - N1",
+      "CADI - Atendimento Sistemas Administrativos - N1",
       'CADI - Reclassificar',
-      "CADI - Atendimento Sistemas Administrativos - N1"
+    	"CADI - Atendimento Projetos Especiais - N1"
     ];
 
     opcoes.forEach(texto => {
@@ -142,5 +145,27 @@
         console.log('️Lista atualizada.');
       }
     }, 20000);
+  });
+})();
+
+
+(function waitForTableAndAttachListeners() {
+  const rows = document.querySelectorAll('tr[name="lookup-item"]');
+
+  if (rows.length === 0) {
+    setTimeout(waitForTableAndAttachListeners, 500); // tenta novamente em 500ms
+    return;
+  }
+
+  rows.forEach(tr => {
+    tr.addEventListener('click', function (event) {
+      const targetTag = event.target.tagName.toLowerCase();
+
+      // Evita clique direto em input ou ícones
+      if (targetTag === 'input' || targetTag === 'i' || event.target.closest('i')) return;
+
+      const checkbox = this.querySelector('input[type="checkbox"]');
+      if (checkbox) checkbox.click();
+    });
   });
 })();
